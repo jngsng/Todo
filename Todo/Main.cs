@@ -11,12 +11,9 @@ namespace Todo
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            today = DateTime.Now.ToString("yyy/M/d");
+            this.Text = $" Todo // {today}";
         }
 
-                private void button1_Click(object sender, EventArgs e)
-        {
-            label1.Text = today;
-        }
     }
 }

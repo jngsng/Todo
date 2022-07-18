@@ -28,47 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.CB_Date = new System.Windows.Forms.ComboBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // panel1
             // 
-            this.button1.Location = new System.Drawing.Point(56, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel1.Controls.Add(this.CB_Date);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(584, 30);
+            this.panel1.TabIndex = 0;
             // 
-            // label1
+            // CB_Date
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.CB_Date.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Date.Font = new System.Drawing.Font("휴먼둥근헤드라인", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CB_Date.FormattingEnabled = true;
+            this.CB_Date.Items.AddRange(new object[] {
+            "22.07.18",
+            "22.07.19"});
+            this.CB_Date.Location = new System.Drawing.Point(0, 0);
+            this.CB_Date.Name = "CB_Date";
+            this.CB_Date.Size = new System.Drawing.Size(584, 33);
+            this.CB_Date.TabIndex = 1;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 611);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Name = "Main";
-            this.Text = "Todo";
+            this.Text = " Todo";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Button button1;
-        private Label label1;
+        private Panel panel1;
+        private ComboBox CB_Date;
     }
 }
