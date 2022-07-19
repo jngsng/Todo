@@ -26,11 +26,18 @@ namespace Todo
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             string dir = Environment.CurrentDirectory + @"\date";
-            dir = new DirectoryInfo(dir);
+            
+            DirectoryInfo di = new DirectoryInfo(dir);
+            if(!di.Exists) Directory.CreateDirectory(dir);
+
+            dir += @"\" + DateTime.Now.ToString("Y");
+            if (!di.Exists) Directory.CreateDirectory(dir);
 
             //string dir = Environment.CurrentDirectory;
-            //Title1.Text = dir;
+            label1.Text = dir;
 
             //DataSet ds = new DataSet();
             //DataTable dt = new DataTable();
