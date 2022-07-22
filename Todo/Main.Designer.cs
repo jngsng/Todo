@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.PN_Date = new System.Windows.Forms.Panel();
-            this.Read = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.PN_T1 = new System.Windows.Forms.Panel();
@@ -58,23 +57,12 @@
             // 
             // PN_Date
             // 
-            this.PN_Date.Controls.Add(this.Read);
             this.PN_Date.Controls.Add(this.button1);
             this.PN_Date.Controls.Add(this.dateTimePicker1);
             this.PN_Date.Location = new System.Drawing.Point(2, 2);
             this.PN_Date.Name = "PN_Date";
             this.PN_Date.Size = new System.Drawing.Size(580, 35);
             this.PN_Date.TabIndex = 0;
-            // 
-            // Read
-            // 
-            this.Read.Location = new System.Drawing.Point(188, 5);
-            this.Read.Name = "Read";
-            this.Read.Size = new System.Drawing.Size(75, 23);
-            this.Read.TabIndex = 3;
-            this.Read.Text = "button2";
-            this.Read.UseVisualStyleBackColor = true;
-            this.Read.Click += new System.EventHandler(this.Create_File);
             // 
             // button1
             // 
@@ -97,6 +85,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(222, 26);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.Date_Change);
             // 
             // PN_T1
             // 
@@ -272,6 +261,5 @@
         private DataGridView dataGridView4;
         private Button button1;
         private Label label1;
-        private Button Read;
     }
 }
