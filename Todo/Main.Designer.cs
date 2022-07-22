@@ -44,6 +44,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.Title4 = new System.Windows.Forms.Label();
+            this.Read = new System.Windows.Forms.Button();
             this.PN_Date.SuspendLayout();
             this.PN_T1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,6 +58,7 @@
             // 
             // PN_Date
             // 
+            this.PN_Date.Controls.Add(this.Read);
             this.PN_Date.Controls.Add(this.button1);
             this.PN_Date.Controls.Add(this.dateTimePicker1);
             this.PN_Date.Location = new System.Drawing.Point(2, 2);
@@ -66,7 +68,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(178, 7);
+            this.button1.Location = new System.Drawing.Point(269, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -88,7 +90,6 @@
             // 
             // PN_T1
             // 
-            this.PN_T1.Controls.Add(this.label1);
             this.PN_T1.Controls.Add(this.dataGridView1);
             this.PN_T1.Controls.Add(this.Title1);
             this.PN_T1.Location = new System.Drawing.Point(2, 40);
@@ -99,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 30);
+            this.label1.Location = new System.Drawing.Point(25, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 2;
@@ -126,6 +127,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.Title2);
             this.panel1.Location = new System.Drawing.Point(2, 196);
@@ -208,6 +210,16 @@
             this.Title4.TabIndex = 0;
             this.Title4.Text = "구매 리스트";
             // 
+            // Read
+            // 
+            this.Read.Location = new System.Drawing.Point(188, 5);
+            this.Read.Name = "Read";
+            this.Read.Size = new System.Drawing.Size(75, 23);
+            this.Read.TabIndex = 3;
+            this.Read.Text = "button2";
+            this.Read.UseVisualStyleBackColor = true;
+            this.Read.Click += new System.EventHandler(this.Read_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -257,5 +269,6 @@
         private DataGridView dataGridView4;
         private Button button1;
         private Label label1;
+        private Button Read;
     }
 }

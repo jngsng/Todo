@@ -1,4 +1,5 @@
 using System.Data;
+using System.IO;
 
 namespace Todo
 {
@@ -6,12 +7,15 @@ namespace Todo
     {
         string today = "";
         List<string> csvList = null;
+        List<string> x = new List<string>();
+        List<string> y = new List<string>();
 
         public Main()
         {
             InitializeComponent();
         }
 
+        // 메인 폼 로드시 실행되는 부분
         private void Main_Load(object sender, EventArgs e)
         {
             // Load Now data 
@@ -19,48 +23,47 @@ namespace Todo
             this.Text = $" Todo // {today}";
         }
 
+        // 달력 날짜 변경 시 실행되는 부분 >> 테스트 버튼으로 CSV로드 구현 후 이쪽으로 이동
         public void Date_Change(object sender, EventArgs e)
+
         {
             // load Excel File
             Title1.Text = "OK";
         }
 
+        // 테스트용 버튼1
         private void button1_Click(object sender, EventArgs e)
         {
             string dir = Environment.CurrentDirectory + @"\date";
             
             // 폴더 생성
             DirectoryInfo di = new DirectoryInfo(dir);
+
             if(!di.Exists) Directory.CreateDirectory(dir);
 
-            dir += @"\" + DateTime.Now.ToString("Y");
+            dir += @"\" + DateTime.Now.ToString("yyyy"+"mm");
+            di = new DirectoryInfo(dir);
             if (!di.Exists) Directory.CreateDirectory(dir);
 
             // CSV 파일 가져오기
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            StreamReader file = new StreamReader("test.csv");
+            DataTable table = new DataTable();
+            table.Columns.Add("WaveLength");
+            table.Columns.Add("Intensity");
 
-            if(fbd.ShowDialog() == DialogResult.OK)
+            while(!file.EndOfStream)
             {
-                string[] filename = Directory.GetFiles(fbd.SelectedPath);
-                csvList = filename.Where(x => x.IndexOf('.csv',StringComparison.OrdinalIgnoreCase >= 0).Select(x => x).ToList());
+                string line = file.ReadLine();
+                string[] data = line.Split(",");
 
-                string result = string.Empty;
+                table.Rows.Add(data[0], data[1]);
 
-                try
-                {
-                    GetCSVData(csvList, result);
-                }
-                catch { }
+                x.Add(data[1]);
+                y.Add(data[2]);
+
             }
 
-            //string dir = Environment.CurrentDirectory;
-            label1.Text = dir;
-
-            //DataSet ds = new DataSet();
-            //DataTable dt = new DataTable();
-            //dt = ds.Tables[0].Clone();
-
-            //dataGridView1.DataSource = ds.Tables[0];
+            dataGridView1.DataSource = table;
 
         }
 
@@ -68,5 +71,11 @@ namespace Todo
         {
            
         }
+
+        private void Read_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
