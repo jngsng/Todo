@@ -46,6 +46,7 @@ namespace Todo
         }
 
         // 파일 생성 함수
+        // >> txt파일 행이 안맞을 경우 에러 발생 확인 필요
         public void Create_File1(object sender, EventArgs e)
         {
             // 폴더 체크 및 생성
@@ -252,6 +253,12 @@ namespace Todo
             }
 
             dataGridView4.DataSource = table;
+        }
+
+        public void Save(string filename, DataGridView dgv)
+        {
+            string seperator = ";";
+            FileStream fs = new FileStream(filename,System.IO)
         }
     }
 }
