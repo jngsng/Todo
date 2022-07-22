@@ -1,14 +1,15 @@
 using System.Data;
 using System.IO;
+using System.Text;
 
 namespace Todo
 {
     public partial class Main : Form
     {
         string today = "";
-        List<string> csvList = null;
-        List<string> x = new List<string>();
-        List<string> y = new List<string>();
+
+        List<string> list = new List<string>();
+        List<string> check = new List<string>();
 
         public Main()
         {
@@ -34,32 +35,34 @@ namespace Todo
         // 테스트용 버튼1
         private void button1_Click(object sender, EventArgs e)
         {
+            // 폴더 생성
             string dir = Environment.CurrentDirectory + @"\date";
             
-            // 폴더 생성
             DirectoryInfo di = new DirectoryInfo(dir);
 
             if(!di.Exists) Directory.CreateDirectory(dir);
 
-            dir += @"\" + DateTime.Now.ToString("yyyy"+"mm");
+            dir += @"\" + DateTime.Now.ToString("yyyy"+"MM");
             di = new DirectoryInfo(dir);
+
             if (!di.Exists) Directory.CreateDirectory(dir);
 
             // CSV 파일 가져오기
-            StreamReader file = new StreamReader("test.csv");
-            DataTable table = new DataTable();
-            table.Columns.Add("WaveLength");
-            table.Columns.Add("Intensity");
 
-            while(!file.EndOfStream)
+            StreamReader file = new StreamReader(File.OpenRead("test.txt"),Encoding.Default);
+            DataTable table = new DataTable();
+            table.Columns.Add("List");
+            table.Columns.Add("Check");
+
+            while (!file.EndOfStream)
             {
                 string line = file.ReadLine();
                 string[] data = line.Split(",");
 
                 table.Rows.Add(data[0], data[1]);
 
-                x.Add(data[1]);
-                y.Add(data[2]);
+                list.Add(data[0]);
+                check.Add(data[1]);
 
             }
 
@@ -67,14 +70,22 @@ namespace Todo
 
         }
 
-        public void GetCSVData(List<string> csvList, string result)
+        private void Create_File (object sender, EventArgs e)
         {
-           
-        }
+            string date = DateTime.Now.ToString("yyyy" + "MM"+"dd");
+            string path = @"date\" + date;
 
-        private void Read_Click(object sender, EventArgs e)
-        {
-
+            if (!File.Exists(path))
+            {
+                using (File.Create(path))
+                {
+                    MessageBox.Show("파일 생성");
+                }
+            }
+            else
+            {
+                MessageBox.Show("else");
+            }
         }
 
     }

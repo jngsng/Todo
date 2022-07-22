@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.PN_Date = new System.Windows.Forms.Panel();
+            this.Read = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.PN_T1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Title1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Title2 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.Title4 = new System.Windows.Forms.Label();
-            this.Read = new System.Windows.Forms.Button();
             this.PN_Date.SuspendLayout();
             this.PN_T1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,6 +65,16 @@
             this.PN_Date.Name = "PN_Date";
             this.PN_Date.Size = new System.Drawing.Size(580, 35);
             this.PN_Date.TabIndex = 0;
+            // 
+            // Read
+            // 
+            this.Read.Location = new System.Drawing.Point(188, 5);
+            this.Read.Name = "Read";
+            this.Read.Size = new System.Drawing.Size(75, 23);
+            this.Read.TabIndex = 3;
+            this.Read.Text = "button2";
+            this.Read.UseVisualStyleBackColor = true;
+            this.Read.Click += new System.EventHandler(this.Create_File);
             // 
             // button1
             // 
@@ -97,17 +107,11 @@
             this.PN_T1.Size = new System.Drawing.Size(580, 150);
             this.PN_T1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 20);
             this.dataGridView1.Name = "dataGridView1";
@@ -124,6 +128,15 @@
             this.Title1.Size = new System.Drawing.Size(56, 15);
             this.Title1.TabIndex = 0;
             this.Title1.Text = "오늘 할 일";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
             // 
             // panel1
             // 
@@ -209,16 +222,6 @@
             this.Title4.Size = new System.Drawing.Size(61, 15);
             this.Title4.TabIndex = 0;
             this.Title4.Text = "구매 리스트";
-            // 
-            // Read
-            // 
-            this.Read.Location = new System.Drawing.Point(188, 5);
-            this.Read.Name = "Read";
-            this.Read.Size = new System.Drawing.Size(75, 23);
-            this.Read.TabIndex = 3;
-            this.Read.Text = "button2";
-            this.Read.UseVisualStyleBackColor = true;
-            this.Read.Click += new System.EventHandler(this.Read_Click);
             // 
             // Main
             // 
