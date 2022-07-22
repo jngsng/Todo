@@ -72,15 +72,17 @@ namespace Todo
 
         private void Create_File (object sender, EventArgs e)
         {
-            string date = DateTime.Now.ToString("yyyy" + "MM"+"dd");
-            string path = @"date\" + date;
+            string date = DateTime.Now.ToString("yyyy" + "MM");
+            string memo = DateTime.Now.ToString("yyyy" + "MM" + "dd"+".txt");
+            string path = @"date\" + date + "\\" + memo;
 
-            if (!File.Exists(path))
+            // 파일 확장자가 이상하게 표시되어 변경 과정이 필요
+            var cvt_path = Path.ChangeExtension(path, ".txt");
+
+            if (!File.Exists(cvt_path))
             {
-                using (File.Create(path))
-                {
-                    MessageBox.Show("파일 생성");
-                }
+                MessageBox.Show(cvt_path);
+                StreamWriter file = File.CreateText(cvt_path);
             }
             else
             {
