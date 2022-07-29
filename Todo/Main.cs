@@ -75,6 +75,7 @@ namespace Todo
             if (!File.Exists(cvt_path))
             {
                 StreamWriter file = File.CreateText(cvt_path);
+                file.Close();
             }
 
             // txt 파일 가져오기
@@ -127,6 +128,7 @@ namespace Todo
             if (!File.Exists(cvt_path))
             {
                 StreamWriter file = File.CreateText(cvt_path);
+                file.Close();
             }
 
             // txt 파일 가져오기
@@ -179,6 +181,7 @@ namespace Todo
             if (!File.Exists(cvt_path))
             {
                 StreamWriter file = File.CreateText(cvt_path);
+                file.Close();
             }
 
             // txt 파일 가져오기
@@ -231,6 +234,7 @@ namespace Todo
             if (!File.Exists(cvt_path))
             {
                 StreamWriter file = File.CreateText(cvt_path);
+                file.Close();
             }
 
             // txt 파일 가져오기
