@@ -10,6 +10,7 @@ namespace Todo
 
         List<string> list = new List<string>();
         List<string> check = new List<string>();
+        string[] paths = new string[4];
 
         public Main()
         {
@@ -42,7 +43,7 @@ namespace Todo
         // 테스트용 버튼
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         // 파일 생성 함수
@@ -257,12 +258,15 @@ namespace Todo
             }
 
             dataGridView4.DataSource = table;
+
+            paths[3] = cvt_path.ToString();
         }
 
-        public void Save(string filename, DataGridView dgv)
+        public void Save(object sender, EventArgs e)
         {
-            string seperator = ";";
-            // FileStream fs = new FileStream(filename,System.IO)
+            string save_path = paths[3];
+            System.IO.File.WriteAllText(save_path, "성공?", Encoding.Default);
+            
         }
     }
 }
