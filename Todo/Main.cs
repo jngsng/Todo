@@ -79,14 +79,14 @@ namespace Todo
 
             // txt 파일 가져오기
 
-            StreamReader files = new StreamReader(File.OpenRead(cvt_path), Encoding.Default);
+            StreamReader files1 = new StreamReader(File.OpenRead(cvt_path), Encoding.Default); // Because it is being used by another process
             DataTable table = new DataTable();
             table.Columns.Add("List");
             table.Columns.Add("Check");
 
-            while (!files.EndOfStream)
+            while (!files1.EndOfStream)
             {
-                string line = files.ReadLine();
+                string line = files1.ReadLine();
                 string[] data = line.Split(",");
 
                 table.Rows.Add(data[0], data[1]);
@@ -131,14 +131,14 @@ namespace Todo
 
             // txt 파일 가져오기
 
-            StreamReader files = new StreamReader(File.OpenRead(cvt_path), Encoding.Default);
+            StreamReader files2 = new StreamReader(File.OpenRead(cvt_path), Encoding.Default); // Exception Error
             DataTable table = new DataTable();
             table.Columns.Add("List");
             table.Columns.Add("Check");
 
-            while (!files.EndOfStream)
+            while (!files2.EndOfStream)
             {
-                string line = files.ReadLine();
+                string line = files2.ReadLine();
                 string[] data = line.Split(",");
 
                 table.Rows.Add(data[0], data[1]);
@@ -183,14 +183,14 @@ namespace Todo
 
             // txt 파일 가져오기
 
-            StreamReader files = new StreamReader(File.OpenRead(cvt_path), Encoding.Default);
+            StreamReader files3 = new StreamReader(File.OpenRead(cvt_path), Encoding.Default);
             DataTable table = new DataTable();
             table.Columns.Add("List");
             table.Columns.Add("Check");
 
-            while (!files.EndOfStream)
+            while (!files3.EndOfStream)
             {
-                string line = files.ReadLine();
+                string line = files3.ReadLine();
                 string[] data = line.Split(",");
 
                 table.Rows.Add(data[0], data[1]);
@@ -235,14 +235,14 @@ namespace Todo
 
             // txt 파일 가져오기
 
-            StreamReader files = new StreamReader(File.OpenRead(cvt_path), Encoding.Default);
+            StreamReader files4 = new StreamReader(File.OpenRead(cvt_path), Encoding.Default);
             DataTable table = new DataTable();
             table.Columns.Add("List");
             table.Columns.Add("Check");
 
-            while (!files.EndOfStream)
+            while (!files4.EndOfStream)
             {
-                string line = files.ReadLine();
+                string line = files4.ReadLine();
                 string[] data = line.Split(",");
 
                 table.Rows.Add(data[0], data[1]);
@@ -258,7 +258,7 @@ namespace Todo
         public void Save(string filename, DataGridView dgv)
         {
             string seperator = ";";
-            FileStream fs = new FileStream(filename,System.IO)
+            // FileStream fs = new FileStream(filename,System.IO)
         }
     }
 }
