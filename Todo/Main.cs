@@ -83,8 +83,6 @@ namespace Todo
 
             StreamReader files1 = new StreamReader(File.OpenRead(cvt_path), Encoding.Default); // Because it is being used by another process
             DataTable table = new DataTable();
-            table.Columns.Add("List");
-            table.Columns.Add("Check");
 
             while (!files1.EndOfStream)
             {
@@ -136,8 +134,6 @@ namespace Todo
 
             StreamReader files2 = new StreamReader(File.OpenRead(cvt_path), Encoding.Default); // Exception Error
             DataTable table = new DataTable();
-            table.Columns.Add("List");
-            table.Columns.Add("Check");
 
             while (!files2.EndOfStream)
             {
@@ -189,8 +185,6 @@ namespace Todo
 
             StreamReader files3 = new StreamReader(File.OpenRead(cvt_path), Encoding.Default);
             DataTable table = new DataTable();
-            table.Columns.Add("List");
-            table.Columns.Add("Check");
 
             while (!files3.EndOfStream)
             {
@@ -242,8 +236,6 @@ namespace Todo
 
             StreamReader files4 = new StreamReader(File.OpenRead(cvt_path), Encoding.Default);
             DataTable table = new DataTable();
-            table.Columns.Add("List");
-            table.Columns.Add("Check");
 
             while (!files4.EndOfStream)
             {
@@ -258,6 +250,7 @@ namespace Todo
             }
 
             dataGridView4.DataSource = table;
+
 
             paths[3] = cvt_path.ToString();
         }

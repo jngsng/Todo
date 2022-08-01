@@ -43,6 +43,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.Title4 = new System.Windows.Forms.Label();
+            this.List1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Check1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.List2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Check2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.List3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Check3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.List4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Check4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PN_Date.SuspendLayout();
             this.PN_T1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -101,6 +109,9 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.List1,
+            this.Check1});
             this.dataGridView1.Location = new System.Drawing.Point(0, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
@@ -130,6 +141,9 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.List2,
+            this.Check2});
             this.dataGridView2.Location = new System.Drawing.Point(0, 20);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
@@ -159,6 +173,9 @@
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.List3,
+            this.Check3});
             this.dataGridView3.Location = new System.Drawing.Point(0, 20);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 25;
@@ -188,6 +205,9 @@
             // 
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.List4,
+            this.Check4});
             this.dataGridView4.Location = new System.Drawing.Point(0, 20);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowTemplate.Height = 25;
@@ -203,6 +223,50 @@
             this.Title4.Size = new System.Drawing.Size(61, 15);
             this.Title4.TabIndex = 0;
             this.Title4.Text = "구매 리스트";
+            // 
+            // List1
+            // 
+            this.List1.FillWeight = 500F;
+            this.List1.HeaderText = "List";
+            this.List1.Name = "List1";
+            // 
+            // Check1
+            // 
+            this.Check1.HeaderText = "Check";
+            this.Check1.Name = "Check1";
+            // 
+            // List2
+            // 
+            this.List2.FillWeight = 500F;
+            this.List2.HeaderText = "List";
+            this.List2.Name = "List2";
+            // 
+            // Check2
+            // 
+            this.Check2.HeaderText = "Check";
+            this.Check2.Name = "Check2";
+            // 
+            // List3
+            // 
+            this.List3.FillWeight = 500F;
+            this.List3.HeaderText = "List";
+            this.List3.Name = "List3";
+            // 
+            // Check3
+            // 
+            this.Check3.HeaderText = "Check";
+            this.Check3.Name = "Check3";
+            // 
+            // List4
+            // 
+            this.List4.FillWeight = 500F;
+            this.List4.HeaderText = "List";
+            this.List4.Name = "List4";
+            // 
+            // Check4
+            // 
+            this.Check4.HeaderText = "Check";
+            this.Check4.Name = "Check4";
             // 
             // Main
             // 
@@ -252,5 +316,13 @@
         private DataGridView dataGridView3;
         private DataGridView dataGridView4;
         private Button button1;
+        private DataGridViewTextBoxColumn List1;
+        private DataGridViewTextBoxColumn Check1;
+        private DataGridViewTextBoxColumn List2;
+        private DataGridViewTextBoxColumn Check2;
+        private DataGridViewTextBoxColumn List3;
+        private DataGridViewTextBoxColumn Check3;
+        private DataGridViewTextBoxColumn List4;
+        private DataGridViewTextBoxColumn Check4;
     }
 }
